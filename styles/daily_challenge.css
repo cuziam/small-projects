@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+  background-color: rgb(224, 224, 213);
+  margin: 50px;
+}
+img {
+  height: 600px;
+  width: 800px;
+  border-radius: 100px;
+}
+
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  color: rgb(83, 75, 75);
+  font-size: 32px;
+  font-style: oblique;
+}
+p {
+  font-family: sans-serif;
+  text-align: center;
+  color: rgb(83, 75, 75);
+}
+a {
+  color: brown;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+#first-p {
+  font-family: cursive;
+  text-align: center;
+  color: rgb(83, 75, 75);
+}
