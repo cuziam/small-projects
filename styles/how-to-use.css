@@ -1,0 +1,26 @@
+h1 {
+  font-size: 30px;
+}
+a {
+  /* padding과 위,오른쪽,아래,왼쪽4개의 값을 가질 수 있다. */
+  padding: 10px;
+  /* border은 pixel, border-type, color를 가질 수 있다.  */
+  border: 1px solid black;
+  /* margin은 위아래 마진, 오른쪽왼쪽 마진 두 개의 값을 가질 수 있다. */
+  margin: 13px;
+  background-color: wheat;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+ol {
+  list-style: none;
+  width: 500px;
+  padding: 0;
+  margin: 10px auto;
+  background-color: brown;
+  border-radius: 6px;
+}
+a:hover {
+  text-decoration: underline dotted;
+}
