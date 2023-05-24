@@ -1,5 +1,5 @@
 body {
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
   background-color: rgb(255, 255, 255);
   margin: 50px;
@@ -11,13 +11,13 @@ img {
 }
 
 h1 {
+  font-family: "Archivo Black", sans-serif;
   text-align: center;
   color: rgb(0, 0, 0);
   font-size: 40px;
   font-style: normal;
 }
 p {
-  font-family: sans-serif;
   text-align: center;
   color: rgb(83, 75, 75);
 }
