@@ -1,28 +1,20 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(242, 217, 208);
   margin: 50px;
-}
-img {
-  height: 600px;
-  width: 800px;
-  border-radius: 100px;
 }
 
 h1 {
   font-family: "Archivo Black", sans-serif;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 40px;
-  font-style: normal;
 }
 p {
-  text-align: center;
-  color: rgb(83, 75, 75);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 24px;
 }
 a {
-  color: brown;
+  font-family: "Fira Sans", sans-serif;
+  color: rgb(167, 1, 78);
   text-decoration: none;
 }
 a:hover {

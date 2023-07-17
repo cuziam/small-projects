@@ -1,17 +1,23 @@
 a {
   /* padding과 위,오른쪽,아래,왼쪽4개의 값을 가질 수 있다. */
-  padding: 10px 48px;
+  padding: 12px 48px;
   /* border은 pixel, border-type, color를 가질 수 있다.  */
-  border: 1px solid black;
   /* margin은 위아래 마진, 오른쪽왼쪽 마진 두 개의 값을 가질 수 있다. */
   /* a는 인라인 속성이기 때문에 위아래 마진과 padding이 적용되지 않는다. 좌우는 가능*/
   /* 다른 컨텐츠가 margin을 0으로 설정해버리면 a를 가리는 경우가 발생할 수 있다.*/
   margin: 12px 0;
-  background-color: wheat;
+  background-color: rgb(167, 1, 78);
+  border: 1px solid rgb(167, 1, 78);
   border-radius: 4px;
   font-size: 24px;
+  color: white;
   /*display속성은 화면에 보여지는 방식을 조절할 수 있다. 임의로 블록방식으로 바꿀 수 있음*/
   display: inline-block;
+}
+
+a:hover {
+  background-color: rgb(180, 12, 90);
+  text-decoration: none;
 }
 header {
   margin-bottom: 40px;
@@ -21,25 +27,31 @@ ol {
   list-style: none;
   width: 500px;
   padding: 0;
-  border: 1px solid black;
   margin: 20px auto;
-  background-color: wheat;
-  border-radius: 6px;
 }
 li {
   /*margin 상쇄 알아보려고 일부러 설정
   인접 형제끼리 위아래 상쇄됨
   부모 자식도 일어날 수 있음*/
+  padding: 16px;
   margin: 30px;
   /* offset-x | offset-y | blur-radius | color */
-  box-shadow: 5px 5px 5px #db5c51;
+  background-color: rgb(223, 136, 124);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 h1 {
-  margin: 0;
+  font-size: 40px;
+  color: rgb(71, 62, 62);
+  margin: 12px 0;
 }
 h2 {
   color: rgb(78, 13, 5);
   font-family: "Oswald", sans-serif;
+}
+
+main p {
+  margin: 12px;
+  color: rgb(71, 29, 22);
 }
 #description {
   margin: 12px 0;
