@@ -89,22 +89,3 @@
 .destination strong {
   color: rgb(0, 160, 117);
 }
-
-footer {
-  padding: 40px;
-  background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
-}
-
-footer ul {
-  display: flex;
-  justify-content: center;
-}
-footer li {
-  width: 80px;
-  height: 80px;
-  margin: 50px;
-}
-footer img {
-  width: 100%;
-  height: 100%;
-}
