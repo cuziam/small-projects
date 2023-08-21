@@ -1,0 +1,72 @@
+body {
+  background-color: rgb(234, 245, 250);
+  font-family: Roboto, sans-serif;
+  margin: 8rem;
+}
+h1 {
+  text-align: center;
+}
+form {
+  width: 30rem;
+  background-color: rgb(243, 248, 250);
+  padding: 1rem;
+  margin: 3rem auto;
+  border: 2px solid rgb(235, 235, 235);
+  border-radius: 6px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  font: inherit;
+  resize: none;
+}
+
+input:focus,
+textarea {
+  background-color: rgb(228, 221, 222);
+}
+button {
+  display: block;
+  font: inherit;
+  background-color: rgb(32, 5, 63);
+  color: white;
+  border: 1px solid rgb(32, 5, 63);
+  padding: 0.5rem 1.5rem;
+  margin-left: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(52, 15, 95);
+}
+
+#button-control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-control-inline {
+  display: flex;
+}
+
+.form-control-inline input {
+  width: auto;
+  margin-right: 0.5rem;
+}

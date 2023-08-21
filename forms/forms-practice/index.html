@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/forms/forms-practice/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <main>
+      <form action="/cong" method="GET">
+        <section>
+          <h2>How can we help you?</h2>
+          <ul>
+            <li><label>Your name</label> <input type="text" required /></li>
+            <li>
+              <label>Your E-mail address</label> <input type="email" required />
+            </li>
+            <li>
+              <label>Your Phone number</label> <input type="number" required />
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li><label>Your message</label> <textarea></textarea></li>
+            <li>
+              <label>How did you find us?</label>
+              <select>
+                <option>Web search</option>
+                <option>recommendation by someone</option>
+                <option>advertisement</option>
+              </select>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>How should we reply?</h2>
+          <ul>
+            <li class="form-control-inline">
+              <input type="checkbox" /><label>Call me</label>
+            </li>
+            <li class="form-control-inline">
+              <input type="checkbox" /><label>Send me an email</label>
+            </li>
+            <li class="form-control-inline">
+              <input type="checkbox" /><label>Don't reply</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <div class="form-control-inline">
+            <input type="radio" required /><label>Accept terms</label>
+          </div>
+        </section>
+        <section>
+          <div id="button-control">
+            <label></label>
+            <button type="reset">Clear</button>
+            <label></label>
+            <button type="submit">Submit</button>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
