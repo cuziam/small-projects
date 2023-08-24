@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Google Maps Address Mapping</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <title>Address Mapping with Legend</title>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv0TGZSHoXfyUFlOODVwAZEQG02aAsVOA&callback=initMap"
       async
       defer
     ></script>
-    <style>
-      #map {
-        height: 400px;
-        width: 100%;
+    <script>
+      // 주소와 값의 목록
+      var data = [
+        { address: "경북 울진 북 두천", value: 9.69 },
+        { address: "강원 강릉 옥계 남양", value: 8.34 },
+        // ... 나머지 주소들 ...
+      ];
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 8,
+          center: { lat: 36.7783, lng: 127.4194 }, // 대한민국 중심 좌표
+        });
+
+        // 각 주소에 원 그리기
+        data.forEach(function (item) {
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode(
+            { address: item.address },
+            function (results, status) {
+              if (status === "OK") {
+                // 원 크기 및 색상 설정 (원 크기를 적절하게 스케일링)
+                var circleSize = item.value * 1000; // 예: 값을 1000배 확대
+                var circleColor = getCircleColor(item.value);
+
+                // 원 그리기
+                new google.maps.Circle({
+                  strokeColor: circleColor,
+                  fillColor: circleColor,
+                  fillOpacity: 0.35,
+                  map: map,
+                  center: results[0].geometry.location,
+                  radius: circleSize,
+                });
+              }
+            }
+          );
+        });
       }
-    </style>
+
+      // 원 크기에 따른 색상 설정
+      function getCircleColor(value) {
+        if (value > 9) return "#FF0000";
+        if (value > 4.5) return "#FFA500";
+        if (value > 0) return "#FFFF00";
+        if (value > -4.5) return "#00FF00";
+        return "#0000FF";
+      }
+    </script>
   </head>
-  <body>
-    <div id="map"></div>
-    <script src="script.js"></script>
+  <body onload="initMap()">
+    <div id="map" style="height: 800px; width: 100%"></div>
   </body>
 </html>

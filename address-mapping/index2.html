@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv0TGZSHoXfyUFlOODVwAZEQG02aAsVOA"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["map"] });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var data = google.visualization.arrayToDataTable([
+          ["City", "Population"],
+          ["New York", 8175000],
+          ["Los Angeles", 3792000],
+          ["Chicago", 2695000],
+          ["Houston", 2099000],
+          ["Phoenix", 1445000],
+        ]);
+
+        var options = {
+          region: "US",
+          displayMode: "markers",
+          colorAxis: { colors: ["green", "blue"] },
+        };
+
+        var map = new google.visualization.Map(
+          document.getElementById("map_div")
+        );
+        map.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map_div" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
