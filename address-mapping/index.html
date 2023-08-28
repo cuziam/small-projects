@@ -97,7 +97,7 @@
             fillOpacity: 0.28,
             map: map,
             center: results[0].geometry.location,
-            radius: value * 1000, // S열의 값에 따라 원의 크기 조절
+            radius: value * 1000 * Math.sqrt(2), // S열의 값에 따라 원의 크기 조절
           });
         } else {
           console.log(

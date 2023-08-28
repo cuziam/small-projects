@@ -1,0 +1,13 @@
+body {
+  margin: 3rem 10rem;
+  background-color: rgb(245, 241, 241);
+}
+p,
+ul {
+  text-align: center;
+  list-style: none;
+}
+
+h2 {
+  text-align: center;
+}
