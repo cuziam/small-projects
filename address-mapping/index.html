@@ -4,7 +4,7 @@
     <title>Address Mapping with Legend</title>
   </head>
   <body>
-    <div id="map" style="height: 800px; width: 100%"></div>
+    <div id="map" style="height: 1080px; width: 1920px"></div>
   </body>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv0TGZSHoXfyUFlOODVwAZEQG02aAsVOA&callback=initMap"></script>
@@ -21,7 +21,7 @@
     // Google Maps API 초기화
     function initMap(locations) {
       var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
+        zoom: 9,
         center: { lat: 37.5665, lng: 126.978 }, // 서울 중심
         //지도 스타일링
         styles: [
@@ -40,13 +40,13 @@
           },
           {
             featureType: "administrative.province",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#000000", weight: 1 }],
+            elementType: "labels.text",
+            stylers: [{ visibility: "off" }],
           },
           {
             featureType: "administrative.locality",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#F0F0F06" }],
+            elementType: "labels.text",
+            stylers: [{ visibility: "off" }],
           },
           {
             featureType: "landscape.natural.terrain",
@@ -58,15 +58,16 @@
             stylers: [{ visibility: "off" }],
           },
           {
-            featureType: "road.highway",
+            featureType: "road.local",
             elementType: "geometry",
-            stylers: [{ color: "#FFF7C0" }],
+            stylers: [{ color: "#A8A8A3" }],
           },
-          {
-            featureType: "road.highway",
-            elementType: "labels.icon",
-            stylers: [{ visibility: "on" }],
-          },
+          // 전체도로를 얻고 싶은 경우 아래 코드 활성화 바람
+          // {
+          //   featureType: "road",
+          //   elementType: "geometry",
+          //   stylers: [{ color: "#A8A8A3" }],
+          // },
           {
             featureType: "water",
             elementType: "geometry",
