@@ -1,0 +1,4 @@
+api key: 말 그대로 구글 지도 api를 이용하기 위해 부여된 패스워드(key).
+index.html: 지도를 구동하기 위한 HTML,CSS,Javascript 코드(앱).
+locations.json: Excel파일에서 뽑아낸 데이터들.
+locations-sample.json: locations.json에서 추출한 부분 데이터. 앱 테스트를 위해 사용하였음.
