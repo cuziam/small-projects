@@ -1,0 +1,32 @@
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  display: none;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .modal {
+    /* 
+    calc에서 +,- 연산자는 양 옆에 공백이 반드시 있어야 한다. *와/연산자는 괜찮다.
+    calc함수가 가장 유용하게 쓰일 때는 이런 식으로 가장 중앙에 박스나 컨텐츠를 위치시켜야 할 때이다.*/
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
