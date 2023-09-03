@@ -3,22 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-    <title>Tic-Tac-Toe!</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/app.js" defer></script>
-  </head>
-  <body>
-    <header><div id="top"></div></header>
-    <main>
-      <div>
-        <section id="enter-plat"></section>
-        <section></section>
-        <section></section>
-      </div>
-    </main>
-    <footer></footer>
-=======
     <title>Tic Tac Toe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +13,10 @@
     <link rel="stylesheet" href="/tic-tac-toe/styles/styles.css" />
     <link rel="stylesheet" href="/tic-tac-toe/styles/overlays.css" />
     <link rel="stylesheet" href="/tic-tac-toe/styles/configuation.css" />
-    <script src="/tic-tac-toe/app.js" defer></script>
+    <link rel="stylesheet" href="/tic-tac-toe/styles/game.css" />
+    <script src="/tic-tac-toe/script/config.js" defer></script>
+    <script src="/tic-tac-toe/script/game.js" defer></script>
+    <script src="/tic-tac-toe/script/app.js" defer></script>
   </head>
   <body>
     <header id="main-header">
@@ -45,10 +32,13 @@
         <form>
           <div class="form-control">
             <label for="playername">Player name</label>
-            <input type="text" name="playername" id="playername" />
+            <input type="text" name="playername" id="playername" required />
           </div>
+          <p id="config-errors"></p>
           <div>
-            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="button" class="btn btn-alt" id="cancel-config-btn">
+              Cancel
+            </button>
             <button type="submit" class="btn">Confirm</button>
           </div>
         </form>
@@ -61,7 +51,7 @@
               <h2>Player 1</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-symbol">X</p>
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
             </article>
           </li>
           <li>
@@ -69,21 +59,21 @@
               <h2>Player 2</h2>
               <h3>PLAYER NAME</h3>
               <p class="player-symbol">O</p>
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
             </article>
           </li>
         </ol>
         <button class="btn">Start New Game</button>
       </section>
       <section id="active-game">
-        <article>
-          <h3>You won! <span id="winner-name">PLAYER NAME</span>!</h3>
+        <article id="game-over">
+          <h2>You won! <span id="winner-name">PLAYER NAME</span>!</h2>
           <p>Click "Start New Game" above, to start a new game</p>
         </article>
 
         <p>It's your turn <span>PLAYER NAME</span>!</p>
         <!-- grid or flex -->
-        <ol>
+        <ol id="game-board">
           <li></li>
           <li></li>
           <li></li>
@@ -98,6 +88,5 @@
         </ol>
       </section>
     </main>
->>>>>>> 6916407a70ce28cb574385f810273678caf2b7de
   </body>
 </html>
