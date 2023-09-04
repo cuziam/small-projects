@@ -2,7 +2,7 @@
   text-align: center;
   /* top right botton left */
   margin: 2rem 0 5rem 0;
-  /* display:none */
+  /* display: none; */
 }
 
 #game-over {
@@ -39,6 +39,8 @@
 }
 
 #game-board li {
+  font-size: 3rem;
+  font-weight: bold;
   background-color: rgb(215, 187, 247);
   border-radius: 2px;
   cursor: pointer;
