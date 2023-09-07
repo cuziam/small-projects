@@ -1,0 +1,16 @@
+[
+  {
+    "name": "인디아 인디아",
+    "address": "경기도 고양시",
+    "cuisine": "인도",
+    "website": "http://www.hindie.com",
+    "description": "음식 맛이 이국적이다. 카레는 근데 직접 만드는 것 같지는 않아요."
+  },
+  {
+    "name": "더 플레이스 홍대점",
+    "address": "서울특별시 서대문구",
+    "cuisine": "양식",
+    "website": "X",
+    "description": "뷰가 환상적이에요!!"
+  }
+]
