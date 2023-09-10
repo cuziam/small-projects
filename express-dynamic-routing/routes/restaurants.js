@@ -16,11 +16,12 @@ router.get("/restaurants", function (req, res) {
 router.get("/restaurants/:id", (req, res) => {
   //만약에 클라이언트가 /restaurants/where URI에 대해 get요청을 보내면
   //params객체는 {id: where}가 된다.
+  const restaurantId = req.params.id;
   const storedRestaurants = resData.getStoredRestaurants();
-
   for (const restaurant of storedRestaurants) {
-    if (restaurant.id === restaurantId)
+    if (restaurant.id === restaurantId) {
       return res.render("restaurant-detail", { restaurant: restaurant });
+    }
   }
   return res.render("404");
 });

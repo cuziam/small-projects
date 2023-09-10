@@ -6,7 +6,6 @@ const filePath = path.join(__dirname, "..", "data", "restaurants.json");
 function getStoredRestaurants() {
   const fileData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fileData);
-  console.log(storedRestaurants);
   return storedRestaurants;
 }
 

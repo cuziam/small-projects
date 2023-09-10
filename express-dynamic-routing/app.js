@@ -21,10 +21,12 @@ app.use("/", restaurantRoutes);
 app.use((req, res) => {
   res.statusCode = 404;
   res.status(404).render("404"); //res.status()는 this를 반환하므로 괜춘
+  console.log("404 not found");
 });
 
 app.use((error, req, res, next) => {
   res.status(500).render("500");
+  console.log("500 server error");
 });
 
 app.listen(4788);
