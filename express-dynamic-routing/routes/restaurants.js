@@ -6,10 +6,30 @@ const resData = require("../util/restaurant-data");
 const router = express.Router();
 
 router.get("/restaurants", function (req, res) {
+  //sorting: ascending by id
+  let order = req.query.order;
+  let nextOrder = "desc";
+  //default
+  if (order !== "asc" && order !== "desc") {
+    order = "asc";
+  }
+  if (order === "desc") {
+    nextOrder = "asc";
+  }
+
   const storedRestaurants = resData.getStoredRestaurants();
+
+  if (order === "asc") {
+    storedRestaurants.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (order === "desc") {
+    storedRestaurants.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
+  console.log(storedRestaurants);
   res.render("restaurants", {
     numberOfRestaurants: storedRestaurants.length,
     restaurants: storedRestaurants,
+    nextOrder: nextOrder,
   });
 });
 //app.get("/restaurans/1") 이런 식으로 출력하는 것은 멍청한 짓이다.
