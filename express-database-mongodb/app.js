@@ -24,6 +24,11 @@ app.use(function (error, req, res, next) {
 });
 
 //데이터 베이스가 연결되어 있는 경우에만 포트 리슨.
-db.connectToDatabase().then(() => {
-  app.listen(4788);
-});
+db.connectToDatabase()
+  .then(() => {
+    app.listen("4788");
+  })
+  .catch((err) => {
+    console.log("에러 발생");
+    console.log(err);
+  });
