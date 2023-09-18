@@ -11,6 +11,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.json()); //json데이터가 들어오면 이를 처리할 수 있게 해준다.
 app.use(express.urlencoded({ extended: true })); // Parse incoming request bodies
 app.use(express.static("public")); // Serve static files (e.g. CSS files)
 
