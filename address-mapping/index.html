@@ -11,12 +11,24 @@
   <script>
     //----------------------------------데이터 불러오기-----------------------------
     // 데이터 불러오기
-    fetch("locations.json")
-      .then((response) => response.json())
-      .then((data) => {
-        initMap(data);
-      })
-      .catch((error) => console.error("An error occurred:", error));
+    async function getJsonData() {
+      try {
+        const rawData = await fetch("locations-sample.json");
+        const jsonData = await rawData.json();
+        initMap(jsonData);
+      } catch (err) {
+        console.log("data load error!\n", err);
+      }
+    }
+    getJsonData();
+    //-----deprecated-----
+    // const data=await fetch('locations.json')
+    // fetch("locations.json")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     initMap(data);
+    //   })
+    //   .catch((error) => console.error("An error occurred:", error));
     //----------------------------------지도에 매핑---------------------------------
     // Google Maps API 초기화
     function initMap(locations) {
