@@ -1,47 +1,12 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 
-const db = require("../data/database");
-
+const authController = require("../controllers/auth-controller");
 const router = express.Router();
 
-router.get("/signup", function (req, res) {
-  let sessionInputData = req.session.inputData;
+router.get("/signup", authController.getSignup);
 
-  if (!sessionInputData) {
-    sessionInputData = {
-      hasError: false,
-      email: "",
-      confirmEmail: "",
-      password: "",
-    };
-  }
-
-  req.session.inputData = null;
-
-  res.render("signup", {
-    inputData: sessionInputData,
-    csrfToken: req.csrfToken(),
-  });
-});
-
-router.get("/login", function (req, res) {
-  let sessionInputData = req.session.inputData;
-
-  if (!sessionInputData) {
-    sessionInputData = {
-      hasError: false,
-      email: "",
-      password: "",
-    };
-  }
-
-  req.session.inputData = null;
-  res.render("login", {
-    inputData: sessionInputData,
-    csrfToken: req.csrfToken(),
-  });
-});
+router.get("/login", authController.getLogin);
 
 router.post("/signup", async function (req, res) {
   const userData = req.body;
