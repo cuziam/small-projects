@@ -1,10 +1,7 @@
 const express = require("express");
-const mongodb = require("mongodb");
 
-const db = require("../data/database");
 const Post = require("../models/post");
 
-const ObjectId = mongodb.ObjectId;
 const router = express.Router();
 
 router.get("/", function (req, res) {
@@ -16,7 +13,7 @@ router.get("/admin", async function (req, res) {
     return res.status(401).render("401");
   }
 
-  const posts = await db.getDb().collection("posts").find().toArray();
+  const posts = await Post.fetchAll();
 
   let sessionInputData = req.session.inputData;
 
@@ -40,7 +37,6 @@ router.get("/admin", async function (req, res) {
 router.post("/posts", async function (req, res) {
   const enteredTitle = req.body.title;
   const enteredContent = req.body.content;
-
   if (
     !enteredTitle ||
     !enteredContent ||
@@ -53,20 +49,19 @@ router.post("/posts", async function (req, res) {
       title: enteredTitle,
       content: enteredContent,
     };
-    const post = new Post(enteredTitle, enteredContent);
-    await post.save();
     res.redirect("/admin");
     return; // or return res.redirect('/admin'); => Has the same effect
   }
-
+  const post = new Post(enteredTitle, enteredContent);
+  await post.save();
   res.redirect("/admin");
 });
 
 router.get("/posts/:id/edit", async function (req, res) {
-  const postId = new ObjectId(req.params.id);
-  const post = await db.getDb().collection("posts").findOne({ _id: postId });
+  const post = new Post(null, null, req.params.id);
+  await post.fetch();
 
-  if (!post) {
+  if (!post.title || !post.content) {
     return res.render("404"); // 404.ejs is missing at this point - it will be added later!
   }
 
