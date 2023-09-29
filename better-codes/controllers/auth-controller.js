@@ -24,7 +24,14 @@ function getLogin(req, res) {
   });
 }
 
-function postSignup(req, res) {}
+function postSignup(req, res) {
+  const userData = req.body;
+  const enteredEmail = userData.email; // userData['email']
+  const enteredConfirmEmail = userData["confirm-email"];
+  const enteredPassword = userData.password;
+
+  
+}
 
 function postLogin(req, res) {}
 
